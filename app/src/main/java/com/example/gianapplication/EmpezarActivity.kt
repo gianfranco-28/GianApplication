@@ -60,6 +60,11 @@ import com.example.gianapplication.screens.MisCitasScreen
 import com.example.gianapplication.ui.theme.BluePrimary
 import com.example.gianapplication.ui.theme.GianApplicationTheme
 import com.example.gianapplication.ui.theme.PinkAccent
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+
 
 class EmpezarActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -185,18 +190,37 @@ fun EmpezarScreen() {
                     .padding(innerPadding)
                     .background(Color(0xFFEBEFF5))
             ) {
-                TextButton(
-                    onClick = { buscarMedico = false }
+                Button(
+                    onClick = {
+                        buscarMedico = false
+                        agendarCita = false
+                        misCitas = false
+                    },
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .height(45.dp),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = BluePrimary,
+                        contentColor = Color.White
+                    ),
+                    elevation = ButtonDefaults.buttonElevation(
+                        defaultElevation = 4.dp
+                    )
                 ) {
-                    TextButton(
-                        onClick = {
-                            buscarMedico = false
-                            agendarCita = false
-                            misCitas = false
-                        }
-                    ) {
-                        Text("← Volver al Home")
-                    }
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = "Volver",
+                        modifier = Modifier.size(20.dp)
+                    )
+
+                    Spacer(modifier = Modifier.width(8.dp))
+
+                    Text(
+                        text = "Volver al inicio",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
                 }
 
                 if (buscarMedico) {
