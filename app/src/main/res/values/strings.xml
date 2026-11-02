@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GianApplication</string>
+    <string name="logo_name">Patient Plus</string>
+    <string name="frase1">"Where compassion</string>
+    <string name="frase2">and healthcare meet"</string>
+    <string name="title_activity_empezar">EmpezarActivity</string>
+    <string name="title_activity_doctores">DoctoresActivity</string>
+</resources>
